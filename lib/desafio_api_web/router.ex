@@ -9,5 +9,7 @@ defmodule DesafioApiWeb.Router do
     pipe_through :api
 
     post "/repos", ReposController, :create
+    post "/users/", UsersController, :create
+    post "/users/signin", UsersController, :sign_in
   end
 end

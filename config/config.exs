@@ -17,6 +17,10 @@ config :desafio_api, DesafioApiWeb.Endpoint,
   pubsub_server: DesafioApi.PubSub,
   live_view: [signing_salt: "0RUnj1XO"]
 
+config :desafio_api, DesafioApiWeb.Auth.Pipeline,
+  module: DesafioApiWeb.Auth.Guardian,
+  error_handler: DesafioApiWeb.Auth.ErrorHandler
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
